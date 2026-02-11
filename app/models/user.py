@@ -9,7 +9,12 @@ class User(Base):
 
 
     id = Column(BigInteger, primary_key=True)
-    teligram_id = Column(BigInteger, unique=True)
+    telegram_id = Column(
+        BigInteger,
+        unique=True,
+        nullable=False,
+        index=True,
+    )
     phone_number = Column(String(20))
     fullname = Column(String(150), nullable= False)
 
